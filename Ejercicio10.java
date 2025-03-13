@@ -11,8 +11,9 @@ public class Ejercicio10 {
             El usuario va a elegir que figura va a calcular
         */
         
-        double lado, base, altura, radio, area=0;
+        double lado, base, altura, radio, area=0, PI=3.1416;
         String figura;
+        
         
         //Ingresar Información
         
@@ -21,13 +22,24 @@ public class Ejercicio10 {
         if( figura.equals("triangulo")){
             base = Double.parseDouble( JOptionPane.showInputDialog("Ingresar la base") );
             altura = Double.parseDouble( JOptionPane.showInputDialog("Ingresar la altura") );
-            
             area= (base * altura)/2;
+            
+        }else if ( figura.equals("cuadrado") ){
+            lado = Double.parseDouble( JOptionPane.showInputDialog("Ingresar el lado del cuadrado") );
+            area = lado * lado;
+            
+        }else if( figura.equals("circulo")){
+            radio = Double.parseDouble( JOptionPane.showInputDialog("Ingresar el radio del círculo"));
+            area = PI *radio * radio;
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Solo se permite las figura las menú");
         }
         
-
-        JOptionPane.showMessageDialog(null, "El área del " + figura + " es: " + area);
-        
+        if( area !=0){
+            JOptionPane.showMessageDialog(null, "El área del " + figura + " es: " + area);
+        }
+          
         
         
         
